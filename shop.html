@@ -1,260 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فروشگاه | سرور ماینکرافت</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBmaWxsPSIjRkZGRDAwIi8+CjxyZWN0IHg9IjEwIiB5PSIxMCIgd2lkdGg9IjIwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjODA0MDAwIi8+CjxyZWN0IHg9IjE1IiB5PSIxNSIgd2lkdGg9IjEwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjRkZGRDAwIi8+Cjwvc3ZnPgo=" alt="ماینکرافت" class="minecraft-icon">
-                <span class="logo-text">سرور ماینکرافت</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">خانه</a></li>
-                <li><a href="shop.html" class="nav-link active">فروشگاه</a></li>
-                <li><a href="login.html" class="nav-link">ورود</a></li>
-                <li><a href="register.html" class="nav-link">ثبت نام</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Shop Header -->
-    <section class="shop-header">
-        <div class="container">
-            <h1 class="shop-title">فروشگاه سرور</h1>
-            <p class="shop-subtitle">رنک‌ها، کیت‌ها و آیتم‌های ویژه</p>
-            
-            <!-- Filter Controls -->
-            <div class="shop-filters">
-                <div class="filter-group">
-                    <label>دسته‌بندی:</label>
-                    <select id="categoryFilter" class="filter-select">
-                        <option value="all">همه</option>
-                        <option value="ranks">رنک‌ها</option>
-                        <option value="kits">کیت‌ها</option>
-                        <option value="coins">سکه‌ها</option>
-                        <option value="items">آیتم‌ها</option>
-                    </select>
-                </div>
-                
-                <div class="filter-group">
-                    <label>مرتب‌سازی:</label>
-                    <select id="sortFilter" class="filter-select">
-                        <option value="popular">محبوب‌ترین</option>
-                        <option value="price-low">ارزان‌ترین</option>
-                        <option value="price-high">گران‌ترین</option>
-                        <option value="newest">جدیدترین</option>
-                    </select>
-                </div>
-                
-                <div class="search-group">
-                    <input type="text" id="searchInput" placeholder="جستجو در محصولات..." class="search-input">
-                    <button class="search-btn">🔍</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Grid -->
-    <section class="products-section">
-        <div class="container">
-            <div class="products-grid" id="productsGrid">
-                <!-- Ranks -->
-                <div class="product-card" data-category="ranks" data-price="50000">
-                    <div class="product-badge vip">VIP</div>
-                    <div class="product-icon">👑</div>
-                    <h3 class="product-title">رنک VIP</h3>
-                    <p class="product-description">دسترسی به ویژگی‌های ویژه و امتیازات خاص</p>
-                    <div class="product-features">
-                        <span>+50% تجربه</span>
-                        <span>دسترسی به /kit vip</span>
-                        <span>پیشوند [VIP]</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price-amount">۵۰,۰۰۰</span>
-                        <span class="price-currency">تومان</span>
-                    </div>
-                    <button class="btn btn-primary buy-btn" onclick="buyProduct('VIP Rank', 50000)">
-                        خرید
-                    </button>
-                </div>
-
-                <div class="product-card" data-category="ranks" data-price="100000">
-                    <div class="product-badge premium">Premium</div>
-                    <div class="product-icon">💎</div>
-                    <h3 class="product-title">رنک Premium</h3>
-                    <p class="product-description">بالاترین سطح دسترسی با تمام امتیازات</p>
-                    <div class="product-features">
-                        <span>+100% تجربه</span>
-                        <span>دسترسی به تمام کیت‌ها</span>
-                        <span>پیشوند [Premium]</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price-amount">۱۰۰,۰۰۰</span>
-                        <span class="price-currency">تومان</span>
-                    </div>
-                    <button class="btn btn-primary buy-btn" onclick="buyProduct('Premium Rank', 100000)">
-                        خرید
-                    </button>
-                </div>
-
-                <!-- Kits -->
-                <div class="product-card" data-category="kits" data-price="25000">
-                    <div class="product-badge kit">Kit</div>
-                    <div class="product-icon">⚔️</div>
-                    <h3 class="product-title">کیت جنگجو</h3>
-                    <p class="product-description">مجموعه کامل تجهیزات برای PvP</p>
-                    <div class="product-features">
-                        <span>شمشیر الماس</span>
-                        <span>زره کامل</span>
-                        <span>پادزهر</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price-amount">۲۵,۰۰۰</span>
-                        <span class="price-currency">تومان</span>
-                    </div>
-                    <button class="btn btn-primary buy-btn" onclick="buyProduct('Warrior Kit', 25000)">
-                        خرید
-                    </button>
-                </div>
-
-                <div class="product-card" data-category="kits" data-price="30000">
-                    <div class="product-badge kit">Kit</div>
-                    <div class="product-icon">🏗️</div>
-                    <h3 class="product-title">کیت سازنده</h3>
-                    <p class="product-description">ابزارهای کامل برای ساخت و ساز</p>
-                    <div class="product-features">
-                        <span>کلنگ الماس</span>
-                        <span>تبر الماس</span>
-                        <span>بلوک‌های ویژه</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price-amount">۳۰,۰۰۰</span>
-                        <span class="price-currency">تومان</span>
-                    </div>
-                    <button class="btn btn-primary buy-btn" onclick="buyProduct('Builder Kit', 30000)">
-                        خرید
-                    </button>
-                </div>
-
-                <!-- Coins -->
-                <div class="product-card" data-category="coins" data-price="10000">
-                    <div class="product-badge coins">Coins</div>
-                    <div class="product-icon">🪙</div>
-                    <h3 class="product-title">۱۰۰۰ سکه</h3>
-                    <p class="product-description">سکه‌های بازی برای خرید آیتم‌ها</p>
-                    <div class="product-features">
-                        <span>۱۰۰۰ سکه</span>
-                        <span>استفاده در فروشگاه</span>
-                        <span>بدون انقضا</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price-amount">۱۰,۰۰۰</span>
-                        <span class="price-currency">تومان</span>
-                    </div>
-                    <button class="btn btn-primary buy-btn" onclick="buyProduct('1000 Coins', 10000)">
-                        خرید
-                    </button>
-                </div>
-
-                <div class="product-card" data-category="coins" data-price="20000">
-                    <div class="product-badge coins">Coins</div>
-                    <div class="product-icon">🪙</div>
-                    <h3 class="product-title">۲۵۰۰ سکه</h3>
-                    <p class="product-description">بسته بزرگ سکه با تخفیف ویژه</p>
-                    <div class="product-features">
-                        <span>۲۵۰۰ سکه</span>
-                        <span>۲۰% تخفیف</span>
-                        <span>بدون انقضا</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price-amount">۲۰,۰۰۰</span>
-                        <span class="price-currency">تومان</span>
-                    </div>
-                    <button class="btn btn-primary buy-btn" onclick="buyProduct('2500 Coins', 20000)">
-                        خرید
-                    </button>
-                </div>
-
-                <!-- Items -->
-                <div class="product-card" data-category="items" data-price="15000">
-                    <div class="product-badge item">Item</div>
-                    <div class="product-icon">🎒</div>
-                    <h3 class="product-title">کیف بزرگ</h3>
-                    <p class="product-description">افزایش فضای انبار به ۵۴ اسلات</p>
-                    <div class="product-features">
-                        <span>۵۴ اسلات</span>
-                        <span>دسترسی دائمی</span>
-                        <span>قابل انتقال</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price-amount">۱۵,۰۰۰</span>
-                        <span class="price-currency">تومان</span>
-                    </div>
-                    <button class="btn btn-primary buy-btn" onclick="buyProduct('Large Backpack', 15000)">
-                        خرید
-                    </button>
-                </div>
-
-                <div class="product-card" data-category="items" data-price="12000">
-                    <div class="product-badge item">Item</div>
-                    <div class="product-icon">🏠</div>
-                    <h3 class="product-title">کلید خانه</h3>
-                    <p class="product-description">دسترسی به خانه شخصی در سرور</p>
-                    <div class="product-features">
-                        <span>خانه شخصی</span>
-                        <span>دسترسی دائمی</span>
-                        <span>قابل شخصی‌سازی</span>
-                    </div>
-                    <div class="product-price">
-                        <span class="price-amount">۱۲,۰۰۰</span>
-                        <span class="price-currency">تومان</span>
-                    </div>
-                    <button class="btn btn-primary buy-btn" onclick="buyProduct('House Key', 12000)">
-                        خرید
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Shopping Cart Modal -->
-    <div class="modal" id="cartModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>سبد خرید</h2>
-                <button class="close-btn" onclick="closeModal()">×</button>
-            </div>
-            <div class="modal-body">
-                <div id="cartItems"></div>
-                <div class="cart-total">
-                    <span>مجموع:</span>
-                    <span id="cartTotal">۰ تومان</span>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-secondary" onclick="closeModal()">انصراف</button>
-                <button class="btn btn-primary" onclick="checkout()">پرداخت</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop">
-        <span>↑</span>
-    </button>
-
-    <script src="script.js"></script>
-</body>
-</html>
